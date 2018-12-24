@@ -5,7 +5,7 @@
 ```
 |----- WeChat-Menu-Server 
   |----- controller
-  |----- serverModules
+  |----- server_modules
      |----- server
      |----- handlebars
      |----- router
@@ -13,6 +13,7 @@
      |----- requires
      |----- session&&cookies
      |----- cors
+     |----- dbConnect
   |----- pages
   |----- routes
   |----- app.js

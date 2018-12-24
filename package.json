@@ -1,0 +1,20 @@
+{
+  "name": "wechat-menu-server",
+  "version": "1.0.0",
+  "description": "```\r |----- WeChat-Menu-Server \r   |----- controller\r   |----- serverModules\r      |----- server\r      |----- handlebars\r      |----- router\r   |----- utils\r      |----- requires\r      |----- session&&cookies\r      |----- cors\r   |----- pages\r   |----- routes\r   |----- app.js\r   |----- package.json\r   |----- asserts\r      |----- css\r      |----- js\r      |----- images\r   |----- config.js\r ```",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ooh-wee/WeChat-Menu-Server.git"
+  },
+  "author": "HanChn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ooh-wee/WeChat-Menu-Server/issues"
+  },
+  "homepage": "https://github.com/Ooh-wee/WeChat-Menu-Server#readme"
+}
