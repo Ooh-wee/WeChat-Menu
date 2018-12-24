@@ -29,7 +29,7 @@
 
 ```
 1. server ( HanChn already claim √ )
-2. router
+2. router ( HanChn already claim √ )
 3. handlebars
 4. requires
 5. session&&cookie
