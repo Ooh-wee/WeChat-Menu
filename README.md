@@ -36,4 +36,14 @@
 6. CORS
 ```
 
+### 项目启动
+
+```
+yarn start 
+
+or 
+
+npm run start
+```
+
 
