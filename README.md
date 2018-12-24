@@ -34,6 +34,7 @@
 4. requires
 5. session&&cookie
 6. CORS
+7. upload
 ```
 
 ### 项目启动
