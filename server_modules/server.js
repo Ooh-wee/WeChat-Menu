@@ -1,5 +1,34 @@
 const http = require('http')
-const { router } =  require('./router')
+
+let showPages = (option = {pathName: '404', mathod: 'GET', pagePath: null}) => {
+   let {pathName, mathod, pagePath} = option
+   if(pathName == '404'){
+       return {data: {}, status: false}
+   } else {
+       return {data: {}, status: true, option}
+   }
+}
+
+let router = (req, res) => {
+    const url = require('url')
+    let parseUrl = url.parse(req.url).path
+    let getUrl = parseUrl.split('/')[1]
+    switch(getUrl){
+        case 'favicon.ico':
+        return
+        default:
+        res.writeHead(200, {'Content-type': 'text/plain'})
+        res.end(`${JSON.stringify(
+            showPages({
+                pathName: (getUrl == '' ? 'index': getUrl),
+                method: req.method,
+                pagePath: '/'
+            }))
+        }`)
+        break
+    }
+  }
+
 
 let server = (port = 3000) => {
     
@@ -15,5 +44,6 @@ let server = (port = 3000) => {
 }
 
 module.exports = {
-    server
+    server,
+    router
 }
