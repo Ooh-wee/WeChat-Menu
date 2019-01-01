@@ -1,11 +1,23 @@
 const http = require('http')
+const path = require('path')
+
+function titleCase5(str) {  
+    return str.toLowerCase().replace(/( |^)[a-z]/g, (L) => L.toUpperCase());  
+}  
+
 
 let showPages = (option = {pathName: '404'}) => {
-   let {pathName, mathod, pagePath} = option
+   let {pathName, method, pagePath} = option
    if(pathName == 404){
        return {data: {}, status: false}
    } else {
-       return {data: {}, status: true, option}
+       let getPage = path.resolve(__dirname, pagePath)
+       let data = require(getPage)[method.toLowerCase() + titleCase5(pathName)]() 
+       if(data)
+        return {data, status: true, option}
+       else 
+        data = {}
+        return {data, status: false, option}   
    }
 }
 
