@@ -7,8 +7,6 @@
   |----- controller
   |----- server_modules
      |----- server
-     |----- handlebars
-     |----- router
   |----- utils
      |----- requires
      |----- session&&cookies
