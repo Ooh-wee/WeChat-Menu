@@ -2,6 +2,7 @@ const http = require('http')
 
 let showPages = (option = {pathName: '404', mathod: 'GET', pagePath: null}) => {
    let {pathName, mathod, pagePath} = option
+   console.log('pagePath: ===> ', pagePath)
    if(pathName == '404'){
        return {data: {}, status: false}
    } else {

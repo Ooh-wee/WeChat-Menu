@@ -1,4 +1,4 @@
 const { server } = require('./server_modules/server')
-const {port, router} = require('./config')
+const {port, pagePath} = require('./config')
 
-server({port, router})
+server({port, pagePath})
