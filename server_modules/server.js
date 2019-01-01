@@ -9,7 +9,7 @@ let showPages = (option = {pathName: '404', mathod: 'GET', pagePath: null}) => {
    }
 }
 
-let router = (req, res) => {
+let router = ({req, res, pagePath}) => {
     const url = require('url')
     let parseUrl = url.parse(req.url).path
     let getUrl = parseUrl.split('/')[1]
@@ -22,7 +22,7 @@ let router = (req, res) => {
             showPages({
                 pathName: (getUrl == '' ? 'index': getUrl),
                 method: req.method,
-                pagePath: '/'
+                pagePath,
             }))
         }`)
         break
@@ -30,10 +30,10 @@ let router = (req, res) => {
   }
 
 
-let server = (port = 3000) => {
-    
+let server = (option = {router: '/', port: 3000}) => {
+    let {pagePath, port} = option
     return http.createServer((req, res) => {
-        router(req, res)
+        router({req, res, pagePath})
     }).listen(port, (err) => {
         if(!err){
             console.log(`Server start on port ${port}`)
