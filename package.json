@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Ooh-wee/WeChat-Menu-Server/issues"
   },
-  "homepage": "https://github.com/Ooh-wee/WeChat-Menu-Server#readme"
+  "homepage": "https://github.com/Ooh-wee/WeChat-Menu-Server#readme",
+  "dependencies": {
+    "mongodb": "^3.1.13"
+  }
 }

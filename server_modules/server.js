@@ -5,7 +5,6 @@ function titleCase5(str) {
     return str.toLowerCase().replace(/( |^)[a-z]/g, (L) => L.toUpperCase());  
 }  
 
-
 let showPages = (option = {pathName: '404'}) => {
    let {pathName, method, pagePath, errorRes} = option
    switch(pathName){
@@ -15,7 +14,7 @@ let showPages = (option = {pathName: '404'}) => {
 
      let getPage = path.resolve(__dirname, pagePath)   
      console.log(`method.toLowerCase() + titleCase5(pathName) ===> `, method.toLowerCase() + titleCase5(pathName))
-     let data = require(getPage)[method.toLowerCase() + titleCase5(pathName)] 
+     let data = require(getPage)[method.toLowerCase() + titleCase5(pathName.split('.')[0])] 
      if(data)
       return {data: data(), status: true}
      else 
@@ -44,7 +43,6 @@ let router = options => {
         break
     }
   }
-
 
 let server = (config = {router: '/', port: 3000}) => {
     return http.createServer((req, res) => {
