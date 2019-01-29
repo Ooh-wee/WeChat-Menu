@@ -11,6 +11,7 @@ let dbConnect = options =>
             err? reject(err): null
             console.log("Success !")
             reslove({db, name: dbName})
+            db.close()
             // Warning !!! db should close !!!
         });
     })
@@ -37,10 +38,9 @@ let dbCollection = options =>
       MongoClient.connect(dbUrl + dbName, { useNewUrlParser: true }, function(err, db) {
           err? reject(err): null
           console.log("Success !")
-          db.createCollection(colName, (err, res) => {
-          err? reject(err): null
-          reslove(Object.assign(options, res))
-          })
+          reslove(db.db(colName).collection)
+          db.close()
+          // Warning !!! db should close !!!
       });
   })
 
