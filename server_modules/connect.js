@@ -44,21 +44,30 @@ let dbCollection = options =>
       });
   })
 
-let dbInsert = () => {
+let dbInsertOne = options => 
+  new Promise((reslove, reject) => {
+    reslove()
+    reject()
+  })
 
-} 
+let dbDeleteOne = options => 
+  new Promise((reslove, reject) => {
+    reslove()
+    reject()
+  })
 
-let dbDelete = () => {
 
-}
+let dbUpdateOne = options => 
+  new Promise((reslove, reject) => {
+    reslove()
+    reject()
+  })
 
-let dbUpdate = () => {
-
-}
-
-let dbSelect = () => {
-  
-}
+let dbSelectOne = options => 
+  new Promise((reslove, reject) => {
+    reslove()
+    reject()
+  })
 
 module.exports = {
   dbConnect,
