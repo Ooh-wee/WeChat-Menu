@@ -62,23 +62,59 @@ let dbInsertOne = options =>
       })
     })
 
-let dbDeleteOne = options => 
-  new Promise((reslove, reject) => {
-    reslove()
-    reject()
-  })
+// let dbDeleteOne = options => 
+// new Promise((reslove, reject) => {
+//   let {
+//     dbUrl,
+//     dbName,
+//     colName,
+//     insertData
+//   } = options
+//     MongoClient.connect(dbUrl + dbName, { useNewUrlParser: true }, function(err, db) {
+//         err? reject(err): null
+//         db.db(colName).collection(colName).insertOne(insertData, (err, res) => {
+//           err ? reject(err) :null
+//           reslove(res.result)
+//           db.close()
+//         })
+//     })
+//   })
 
 
-let dbUpdateOne = options => 
-  new Promise((reslove, reject) => {
-    reslove()
-    reject()
-  })
+// let dbUpdateOne = options => 
+// new Promise((reslove, reject) => {
+//   let {
+//     dbUrl,
+//     dbName,
+//     colName,
+//     insertData
+//   } = options
+//     MongoClient.connect(dbUrl + dbName, { useNewUrlParser: true }, function(err, db) {
+//         err? reject(err): null
+//         db.db(colName).collection(colName).insertOne(insertData, (err, res) => {
+//           err ? reject(err) :null
+//           reslove(res.result)
+//           db.close()
+//         })
+//     })
+//   })
 
 let dbSelectOne = options => 
-  new Promise((reslove, reject) => {
-    reslove()
-    reject()
+new Promise((reslove, reject) => {
+  let {
+    dbUrl,
+    dbName,
+    colName,
+    selectData
+  } = options
+    MongoClient.connect(dbUrl + dbName, { useNewUrlParser: true }, function(err, db) {
+        err? reject(err): null
+        db.db(colName).collection(colName).findOne(selectData, (err, res) => {
+          err ? reject(err) :null
+          reslove(res)
+          db.close()
+        })
+    })
   })
 
 module.exports = {
