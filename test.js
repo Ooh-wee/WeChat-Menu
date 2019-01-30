@@ -1,15 +1,16 @@
 let {
-  dbSelectOne
+  dbDeleteOne
 } = require('./server_modules/connect')
 const config = require('./config')
 
 
 // connect mongodb
 let test = async() => {
-  let res = await dbSelectOne(Object.assign(config, {colName: 'test', selectData: {
-    userName: 'yuanjing',
-    userPwd: '123'
-  }}))
+  let res = await dbDeleteOne(Object.assign(config, {colName: 'test', 
+    updateBefore: {
+      userName: 'zhangsan'
+    }
+  }))
   console.log(res)
 }    
 
