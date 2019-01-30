@@ -41,14 +41,26 @@ let dbCollection = options =>
           reslove(db.db(colName).collection)
           db.close()
           // Warning !!! db should close !!!
-      });
+      })
   })
 
 let dbInsertOne = options => 
   new Promise((reslove, reject) => {
-    reslove()
-    reject()
-  })
+    let {
+      dbUrl,
+      dbName,
+      colName,
+      insertData
+    } = options
+      MongoClient.connect(dbUrl + dbName, { useNewUrlParser: true }, function(err, db) {
+          err? reject(err): null
+          db.db(colName).collection(colName).insertOne(insertData, (err, res) => {
+            err ? reject(err) :null
+            reslove(res.result)
+            db.close()
+          })
+      })
+    })
 
 let dbDeleteOne = options => 
   new Promise((reslove, reject) => {
@@ -73,9 +85,9 @@ module.exports = {
   dbConnect,
   dbNewCollection,
   dbCollection,
-  dbInsert,
-  dbDelete,
-  dbUpdate,
-  dbSelect
+  dbInsertOne,
+  dbDeleteOne,
+  dbUpdateOne,
+  dbSelectOne
 }    
 
