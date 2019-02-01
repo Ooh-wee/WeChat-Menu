@@ -4,21 +4,20 @@
 
 ```
 |----- WeChat-Menu-Server 
-  |----- controller
+  |----- controller   // 控制层 业务逻辑
   |----- server_modules
-     |----- server
-     |----- connect
-  |----- router
-  |----- app.js
-  |----- package.json
-  |----- config.js  
-  |----- asserts
+     |----- server  // 服务端公共模块  通过 app.js主文件调用启动服务
+     |----- connect  // 服务端数据库公共模块 提供增删改查支持
+  |----- router  // 路由页面配置  
+  |----- app.js  // 主文件
+  |----- package.json  
+  |----- config.js  // 项目全局对象参数
+  |----- asserts // 静态资源
      |----- css
      |----- js
      |----- images
        | ----- favicon.ico
-  |----- config.js
-  |----- test.js
+  |----- test.js  // 模块测试文件 无特殊用途、仅用于模块示例测试
 ```
 
 ### modules
