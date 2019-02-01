@@ -7,20 +7,18 @@
   |----- controller
   |----- server_modules
      |----- server
-  |----- utils
-     |----- requires
-     |----- session&&cookies
-     |----- cors
-     |----- dbConnect
-  |----- pages
+     |----- connect
   |----- routes
   |----- app.js
   |----- package.json
+  |----- config.js  
   |----- asserts
      |----- css
      |----- js
      |----- images
+       | ----- favicon.ico
   |----- config.js
+  |----- test.js
 ```
 
 ### modules
@@ -28,12 +26,7 @@
 ```
 1. server ( HanChn already claim √ )
 2. router ( HanChn already claim √ )
-3. handlebars
-4. requires
-5. session&&cookie
-6. CORS
-7. upload
-8. dbConnect
+3. dbConnect ( HanChn already claim √ )
 ```
 
 ### 项目启动
@@ -45,5 +38,16 @@ or
 
 npm run start
 ```
+
+### 模块测试用例
+
+```
+yarn test 
+
+or 
+
+npm run test
+```
+
 
 
