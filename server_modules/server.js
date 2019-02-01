@@ -12,8 +12,7 @@ let showPages = (option = {pathName: '404'}) => {
      return errorRes
      default:
 
-     let getPage = path.resolve(__dirname, pagePath)   
-     console.log(`method.toLowerCase() + titleCase5(pathName) ===> `, method.toLowerCase() + titleCase5(pathName))
+     let getPage = path.resolve(__dirname, pagePath, titleCase5(pathName.split('.')[0]))   
      let data = require(getPage)[method.toLowerCase() + titleCase5(pathName.split('.')[0])] 
      if(data)
       return {data: data(), status: true}

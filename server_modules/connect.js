@@ -143,7 +143,6 @@ module.exports = {
   dbInsertOne,
   dbDeleteOne,
   dbUpdateOne,
-  dbSelectOne,
-  dbSelectAll
+  dbSelectOne
 }    
 
