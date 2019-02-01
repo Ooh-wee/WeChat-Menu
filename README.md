@@ -8,7 +8,7 @@
   |----- server_modules
      |----- server
      |----- connect
-  |----- routes
+  |----- router
   |----- app.js
   |----- package.json
   |----- config.js  
