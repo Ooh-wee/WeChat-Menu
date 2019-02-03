@@ -14,6 +14,7 @@ let showPages = (option = {pathName: '404'}) => {
 
      let getPage = path.resolve(__dirname, pagePath, titleCase5(pathName.split('.')[0]))   
      let data = require(getPage)[method.toLowerCase() + titleCase5(pathName.split('.')[0])] 
+     console.log('data ===>>>', data())
      if(data)
       return {data: data(), status: true}
      else 
